@@ -21,14 +21,14 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "comments")
-public class Comment {
+public class CommentEntity {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @ManyToOne(targetEntity = User.class, optional = false, fetch = FetchType.LAZY)
-    private User user;
+    @ManyToOne(targetEntity = UserEntity.class, optional = false, fetch = FetchType.LAZY)
+    private UserEntity userEntity;
 
     @Column(name = "target_id", nullable = false)
     private Long targetId;
@@ -44,9 +44,9 @@ public class Comment {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Comment comment = (Comment) o;
+        CommentEntity commentEntity = (CommentEntity) o;
 
-        return Objects.equals(id, comment.id);
+        return Objects.equals(id, commentEntity.id);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package io.amonite.flipitservice.domain.model.entities;
 
-import io.amonite.flipitservice.domain.enums.DifficultyLevel;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -16,41 +15,38 @@ import java.util.Objects;
  * @author Luís Alves
  */
 @Entity
-@Table(name = "questions")
-public class Question {
+@Table(name = "decks")
+public class DeckEntity {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(name = "question", nullable = false, columnDefinition = "TEXT")
-    private String question;
+    @Column(name = "name", nullable = false, length = 300)
+    private String name;
 
-    @Column(name = "difficulty_level", nullable = false)
-    private DifficultyLevel difficultyLevel;
-
+    @Column(name = "subject")
+    private String subject;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Question question = (Question) o;
+        DeckEntity that = (DeckEntity) o;
 
-        return Objects.equals(id, question.id);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return 1344421622;
+        return 1715576477;
     }
 
     @Override
     public String toString() {
-        //@formatter:off
         return getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
-                "question = " + question + ", " +
-                "difficultyLevel = " + difficultyLevel + ")";
-        //@formatter:on
+                "name = " + name + ", " +
+                "subject = " + subject + ")";
     }
 }

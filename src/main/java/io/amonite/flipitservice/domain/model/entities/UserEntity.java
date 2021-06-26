@@ -20,7 +20,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "users")
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue
@@ -72,9 +72,9 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        User user = (User) o;
+        UserEntity userEntity = (UserEntity) o;
 
-        return Objects.equals(id, user.id);
+        return Objects.equals(id, userEntity.id);
     }
 
     @Override
