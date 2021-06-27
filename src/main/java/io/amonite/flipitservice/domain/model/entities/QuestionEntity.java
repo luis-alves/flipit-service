@@ -37,6 +37,38 @@ public class QuestionEntity {
     @Column(name = "difficulty_level", nullable = false)
     private DifficultyLevel difficultyLevel;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public DeckEntity getDeck() {
+        return deck;
+    }
+
+    public void setDeck(DeckEntity deck) {
+        this.deck = deck;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public DifficultyLevel getDifficultyLevel() {
+        return difficultyLevel;
+    }
+
+    public void setDifficultyLevel(DifficultyLevel difficultyLevel) {
+        this.difficultyLevel = difficultyLevel;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
