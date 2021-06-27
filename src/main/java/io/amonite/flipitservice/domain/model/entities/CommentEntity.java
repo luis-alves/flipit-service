@@ -44,10 +44,6 @@ public class CommentEntity {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public UserEntity getUserEntity() {
         return userEntity;
     }

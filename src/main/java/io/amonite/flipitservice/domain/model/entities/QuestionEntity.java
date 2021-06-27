@@ -41,10 +41,6 @@ public class QuestionEntity {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public DeckEntity getDeck() {
         return deck;
     }
